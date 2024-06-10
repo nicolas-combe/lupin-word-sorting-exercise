@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-int main()
+int main(int in_argc, wchar_t* in_argv[])
 {
 }
 

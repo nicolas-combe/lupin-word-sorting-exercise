@@ -142,6 +142,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ArgumentsParserTests.cpp" />
     <ClCompile Include="gtest.cpp" />
     <ClCompile Include="WordsCatalogTests.cpp" />
   </ItemGroup>
