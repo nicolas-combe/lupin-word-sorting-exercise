@@ -4,6 +4,9 @@
 #include <list>
 #include <memory>
 #include <string>
+#include <vector>
+
+#include "ArgumentsParser.h"
 
 //! @brief parse an input text to get list of words
 class WordsCatalog
@@ -34,6 +37,28 @@ public:
 	static inline bool isAllowed(wchar_t in_c)
 	{
 		return std::iswalnum(in_c);
+	}
+
+	std::list<std::wstring> process(ArgumentsParser const& in_args)
+	{
+		auto const& words(getList());
+
+		std::vector<std::wstring> output = {};
+		for (auto const& word : words)
+		{
+			if ((in_args.getRemoveDuplicates() && std::find(output.begin(), output.end(), word) == output.end()) ||
+				in_args.getRemoveDuplicates() == false)
+			{
+				output.push_back(word);
+			}
+		}
+		
+		std::sort(output.begin(), output.end(), [sorting= in_args.getSorting()](std::wstring const& in_a, std::wstring const& in_b) {
+			return ((sorting == Sorting::Ascending ? -1 : 1) * in_a.compare(in_b)) > 0;
+			});
+
+
+		return std::list<std::wstring>(output.begin(), output.end());
 	}
 
 private:

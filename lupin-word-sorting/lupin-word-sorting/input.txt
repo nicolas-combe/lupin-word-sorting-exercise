@@ -1,0 +1,8 @@
+Cet exercice servira aussi de base pour la discussion à venir mardi prochain.
+
+L’exercice est le suivant. Il s’agit de créer une petite application capable de :
+
+Recevoir (ou lire) une liste de mots en entrée
+Les trier par ordre croissant ou décroissant, en fonction d’une option donnée en argument
+Si une autre option est spécifiée, l’application supprime alors les valeurs qui apparaissent plusieurs fois
+Enfin, afficher (ou sauvegarder) le résultat trié, avec ou sans suppression des doublons comme demandé
