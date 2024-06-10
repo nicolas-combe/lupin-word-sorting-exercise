@@ -21,5 +21,8 @@
     <ClCompile Include="gtest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="WordsCatalogTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
